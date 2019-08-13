@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+    <name>auguriaInteractiveImage</name>
+    <version>0.0.1</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/gpl-license.php">GNU General Public License</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>This extension allow you to display an image on a product page. Areas will be defined et linked to another products.</summary>
+    <description>Handled by the extension&#xD;
+&#xD;
+    Possibility to define an image by product.&#xD;
+    The areas are manageable by product.&#xD;
+    Listing of the linked products associated to the areas.&#xD;
+    Mass add for the listed products.&#xD;
+    Tooltip hovering the areas.&#xD;
+    Only list the "in stock" products.&#xD;
+&#xD;
+Free Auguria_Core extension required.&#xD;
+</description>
+    <notes>First version of the extension. Free Auguria_Core extension required.</notes>
+    <authors><author><name>Auguria</name><user>auguria</user><email>magento@auguria.net</email></author></authors>
+    <date>2014-05-12</date>
+    <time>08:57:05</time>
+    <contents><target name="magecommunity"><dir name="Auguria"><dir name="InteractiveImage"><dir name="Block"><dir name="Adminhtml"><dir name="Catalog"><dir name="Product"><dir name="Helper"><dir name="Form"><dir name="Image"><dir name="Interactive"><dir name="Panel"><dir name="Area"><file name="Default.php" hash="27c20fcc58c34a619c76c7d9f3020238"/></dir><file name="Areas.php" hash="79d25988e2c8898ef472aa0abfe29728"/></dir><file name="Popin.php" hash="f311bc5eb2b7a1de5b85cd4cf90922dc"/></dir><file name="Interactive.php" hash="b00f872fae58bbe8eaaa17d1a479f495"/></dir></dir></dir></dir></dir></dir><dir name="Catalog"><dir name="Product"><file name="Image.php" hash="0ae00def32a8ff335dbc8ab21d0b6abb"/></dir></dir></dir><dir name="Helper"><file name="Config.php" hash="1b681b6bc6026d85612e71e92e7e231b"/><file name="Data.php" hash="f77d687f8f8394f380b0c49011aed92f"/></dir><dir name="Model"><dir name="Catalog"><dir name="Product"><dir name="Attribute"><dir name="Backend"><file name="Image.php" hash="d4626a456cf2bf891b6907ab29d16224"/></dir></dir></dir></dir></dir><dir name="controllers"><dir name="Adminhtml"><dir name="Auguria"><dir name="InteractiveImage"><file name="ImageController.php" hash="e2785e9df66cd2f18cd27b7a4591ee99"/></dir></dir></dir><dir name="Checkout"><dir name="Cart"><file name="AjaxController.php" hash="08e9986648018b25072b09855166b555"/></dir><file name="CartController.php" hash="03f0f24305a19f07001fe71853f58d81"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="5ec267e2e63459b3ec9eb7784ea9e4da"/><file name="config.xml" hash="3bdfc9be83229c8b7ff363b3fdd37016"/><file name="jstranslator.xml" hash="f85990cfdb8aac7ea10529c4b2dab0e6"/><file name="system.xml" hash="854e957398da36fd688cea794ab48fe8"/></dir><dir name="sql"><dir name="auguria_interactiveimage_setup"><file name="install-0.0.1.php" hash="42e8345c1826f45cb90a5a43d5ab3780"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="auguria"><dir name="interactiveimage"><dir name="catalog"><dir name="product"><dir name="helper"><dir name="form"><dir name="image"><dir name="interactive"><dir name="panel"><dir name="area"><file name="default.phtml" hash="747a1cb7a7e43dfb59abd38ee14afdd5"/></dir><file name="areas.phtml" hash="0ab8dccd7bbd5b4532f1d6eb46083459"/></dir><file name="popin.phtml" hash="fbdb832cdb9a769aaabe9e694a819dfc"/></dir></dir></dir></dir></dir></dir></dir></dir></dir><dir name="layout"><dir name="auguria"><file name="interactive_image.xml" hash="ef596e624796cc469f3660276d9a4233"/></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="auguria"><dir name="interactiveimage"><dir name="catalog"><dir name="product"><file name="image.phtml" hash="b248488043e9347baa20ee71504ce462"/></dir></dir></dir></dir></dir><dir name="layout"><dir name="auguria"><file name="interactive_image.xml" hash="6a51a87a692676a91bad0236a1965520"/></dir></dir></dir></dir></dir></target><target name="mage"><dir name="js"><dir name="auguria"><dir name="interactiveimage"><file name="cart.js" hash="724efb87a4b8fe5e5850921bc928e72d"/><file name="image.js" hash="5c64f22d0a98a0c77156378efd042da7"/><file name="jquery-1.10.2.min.js" hash="055b1c0c38f106959bdd3cee7e6b0136"/><file name="jquery.maphilight.min.js" hash="060990df8870589e0e629349f8fb3a4c"/><file name="kinetic-v4.5.4.min.js" hash="5d114c84e5926c19c8b1cee80ea79ce5"/></dir></dir></dir></target><target name="mageskin"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="auguria"><dir name="interactiveimage"><file name="image.css" hash="47b0fbfecac78ae0b5a524cf85a5c515"/></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="css"><dir name="auguria"><dir name="interactiveimage"><file name="image.css" hash="4081440dcd4fa462f4d18b9ef76266ea"/></dir></dir></dir></dir></dir></dir></target><target name="magelocale"><dir name="en_US"><file name="Auguria_InteractiveImage.csv" hash="d41d8cd98f00b204e9800998ecf8427e"/></dir><dir name="fr_FR"><file name="Auguria_InteractiveImage.csv" hash="ca76a1aa121f73673b8fc16a6fcd7bc2"/></dir></target><target name="mageetc"><dir name="modules"><file name="Auguria_InteractiveImage.xml" hash="bd010178de76af694025d33e666e55b2"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.3.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

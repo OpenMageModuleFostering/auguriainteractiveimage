@@ -1,0 +1,46 @@
+<?php
+/**
+ * @category   Auguria
+ * @package    Auguria_InteractiveImage
+ * @author     Auguria
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License version 3 (GPLv3)
+ */
+
+/* @var $this Auguria_InteractiveImage_Block_Adminhtml_Catalog_Product_Helper_Form_Image_Interactive_Panel_Area_Default */
+?>
+<?php
+$area = $this->getInteractiveArea();
+?>
+
+<fieldset id="fieldset-<?php echo $area['id']?>" class="area">
+    <input type="hidden" name="areas[<?php echo $area['id']?>][id]" value="<?php echo $area['id']?>">
+    <input type="hidden" name="areas[<?php echo $area['id']?>][size][x]" value="<?php echo $area['size']['x']?>">
+    <input type="hidden" name="areas[<?php echo $area['id']?>][size][y]" value="<?php echo $area['size']['y']?>">
+    <input type="hidden" name="areas[<?php echo $area['id']?>][size][width]" value="<?php echo $area['size']['width']?>">
+    <input type="hidden" name="areas[<?php echo $area['id']?>][size][height]" value="<?php echo $area['size']['height']?>">
+    <input type="hidden" name="areas[<?php echo $area['id']?>][type]" value="<?php echo $area['type']?>">
+    <input type="hidden" name="areas[<?php echo $area['id']?>][color]" value="<?php echo $area['color']?>">
+    <input type="hidden" name="areas[<?php echo $area['id']?>][render]" value="<?php echo $area['render']?>">
+    <label>
+        <?php echo $this->__('Position')?>
+        <input type="text" name="areas[<?php echo $area['id']?>][position]" value="<?php echo isset($area['position']) ? $area['position'] : '' ?>">
+    </label>
+    <label>
+        <?php echo $this->__('Product Sku')?>
+        <input type="text" name="areas[<?php echo $area['id']?>][sku]" value="<?php echo isset($area['sku']) ? $area['sku'] : '' ?>">
+    </label>
+    <label>
+        <?php $value = isset($area['hilight_area']) ? $area['hilight_area'] : '0' ?>
+
+        <?php echo $this->__('Hilight area on frontend')?>
+        <select name="areas[<?php echo $area['id']?>][hilight_area]">
+            <option value="0" <?php echo $value == '0' ? 'selected="selected"' : ''?>><?php echo $this->__('No')?></option>
+            <option value="1" <?php echo $value == '1' ? 'selected="selected"' : ''?>><?php echo $this->__('Yes')?></option>
+        </select>
+    </label>
+
+    <div class="clear"></div>
+    <button type="button" class="button button-delete" onclick="interactiveImage.deleteArea('<?php echo $area['id']?>');"><?php echo $this->__('Delete')?></button>
+</fieldset>
+
+<hr>

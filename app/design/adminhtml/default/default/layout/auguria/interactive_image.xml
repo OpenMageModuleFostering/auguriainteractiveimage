@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @category   Auguria
+ * @package    Auguria_InteractiveImage
+ * @author     Auguria
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License version 3 (GPLv3)
+ */
+ -->
+
+<layout>
+
+    <adminhtml_catalog_product_edit>
+        <reference name="head">
+            <action method="addJs"><link>auguria/interactiveimage/kinetic-v4.5.4.min.js</link></action>
+            <action method="addJs"><link>auguria/interactiveimage/image.js</link></action>
+            <action method="addCss"><link>auguria/interactiveimage/image.css</link></action>
+        </reference>
+    </adminhtml_catalog_product_edit>
+
+    <adminhtml_auguria_interactiveimage_image_display>
+        <reference name="content">
+            <block type="auguria_interactiveimage/adminhtml_catalog_product_helper_form_image_interactive_popin" name="interactive.image.popin" template="auguria/interactiveimage/catalog/product/helper/form/image/interactive/popin.phtml">
+                <block type="auguria_interactiveimage/adminhtml_catalog_product_helper_form_image_interactive_panel_areas" name="interactive.image.panel.areas" template="auguria/interactiveimage/catalog/product/helper/form/image/interactive/panel/areas.phtml">
+                </block>
+            </block>
+        </reference>
+    </adminhtml_auguria_interactiveimage_image_display>
+
+    <adminhtml_auguria_interactiveimage_image_createpaneltab>
+	    <block type="auguria_interactiveimage/adminhtml_catalog_product_helper_form_image_interactive_panel_areas" name="interactive.image.panel.areas" template="auguria/interactiveimage/catalog/product/helper/form/image/interactive/panel/areas.phtml">
+	    </block>
+    </adminhtml_auguria_interactiveimage_image_createpaneltab>
+
+</layout>

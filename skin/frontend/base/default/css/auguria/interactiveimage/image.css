@@ -1,0 +1,20 @@
+.interactive-container {
+    overflow: auto;	
+}
+.interactive-container .btn-cart {
+	float: right;
+	margin: 10px 0;
+}
+.interactive-container map {
+    position: relative;
+}
+.interactive-container .tooltip {
+	position: absolute;
+	background-color: #fff;
+	padding: 5px;
+	border: 1px solid #C4C6C8;
+	min-width: 50px;
+}
+.interactiveimage-product-list {
+	margin-top: 10px;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/**
+ * @category   Auguria
+ * @package    Auguria_InteractiveImage
+ * @author     Auguria
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License version 3 (GPLv3)
+ */
+-->
+<jstranslator>
+    <alert-display-image-url-undefined translate="message" module="auguria_interactiveimage">
+        <message>Complete</message>
+    </alert-display-image-url-undefined>
+</jstranslator>

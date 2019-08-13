@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/**
+ * @category   Auguria
+ * @package    Auguria_InteractiveImage
+ * @author     Auguria
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License version 3 (GPLv3)
+ */
+ -->
+<config>
+
+	<modules>
+		<Auguria_InteractiveImage>
+			<version>0.0.1</version>
+		</Auguria_InteractiveImage>
+	</modules>
+	
+	<global>
+        <resources>
+            <auguria_interactiveimage_setup>
+                <setup>
+                    <module>Auguria_InteractiveImage</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+            </auguria_interactiveimage_setup>
+        </resources>
+		<blocks>
+			<auguria_interactiveimage>
+				<class>Auguria_InteractiveImage_Block</class>
+			</auguria_interactiveimage>
+		</blocks>
+		<helpers>
+			<auguria_interactiveimage>
+				<class>Auguria_InteractiveImage_Helper</class>
+			</auguria_interactiveimage>
+		</helpers>
+		<models>
+            <auguria_interactiveimage>
+                <class>Auguria_InteractiveImage_Model</class>
+            </auguria_interactiveimage>
+        </models>
+	</global>
+	
+    <frontend>
+        <routers>
+            <auguria_interactiveimage>
+                <use>standard</use>
+                <args>
+                    <module>Auguria_InteractiveImage</module>
+                    <frontName>image</frontName>
+                </args>
+            </auguria_interactiveimage>
+        </routers>
+        <layout>
+            <updates>
+                <auguria_interactiveimage>
+                    <file>auguria/interactive_image.xml</file>
+                </auguria_interactiveimage>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Auguria_InteractiveImage>
+                    <files>
+                        <default>Auguria_InteractiveImage.csv</default>
+                    </files>
+                </Auguria_InteractiveImage>
+            </modules>
+        </translate>
+    </frontend>
+	
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <auguria_interactiveimage before="Mage_Adminhtml">Auguria_InteractiveImage_Adminhtml</auguria_interactiveimage>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+	
+	<adminhtml>
+	   <layout>
+            <updates>
+                <auguria_interactiveimage>
+                    <file>auguria/interactive_image.xml</file>
+                </auguria_interactiveimage>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Auguria_InteractiveImage>
+                    <files>
+                        <default>Auguria_InteractiveImage.csv</default>
+                    </files>
+                </Auguria_InteractiveImage>
+            </modules>
+        </translate>
+	</adminhtml>
+	
+    <default>
+       <auguria_interactiveimage>
+           <general>
+               <use_ajax>0</use_ajax>
+           </general>
+       </auguria_interactiveimage>
+    </default>
+	
+</config>

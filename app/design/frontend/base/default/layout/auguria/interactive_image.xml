@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Auguria
+ * @package    Auguria_InteractiveImage
+ * @author     Auguria
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License version 3 (GPLv3)
+ */
+ -->
+<layout version="0.1.0">
+
+    <catalog_product_view>
+        <reference name="head">
+            <action method="addJs"><link>auguria/interactiveimage/jquery-1.10.2.min.js</link></action>
+            <action method="addJs"><link>auguria/interactiveimage/jquery.maphilight.min.js</link></action>
+            <action method="addJs"><link>auguria/interactiveimage/cart.js</link></action>
+            <action method="addCss"><link>css/auguria/interactiveimage/image.css</link></action>
+        </reference>
+        <reference name="product.info.additional">
+			<block type="auguria_interactiveimage/catalog_product_image" name="auguria.interactiveimage.catalog.product.image">
+			    <action method="setTemplate"><template>auguria/interactiveimage/catalog/product/image.phtml</template></action>
+			</block>
+        </reference>
+    </catalog_product_view>
+
+ </layout>

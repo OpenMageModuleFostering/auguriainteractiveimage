@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @category   Auguria
+ * @package    Auguria_InteractiveImage
+ * @author     Auguria
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License version 3 (GPLv3)
+ */
+ -->
+<config>
+	<acl>
+        <resources>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<config>
+								<children>
+									<auguria_interactiveimage translate="title" module="auguria_interactiveimage">
+										<title>Auguria interactive image</title>
+									</auguria_interactiveimage>
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>

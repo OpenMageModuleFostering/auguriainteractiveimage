@@ -1,0 +1,35 @@
+<?php
+/**
+ * @category   Auguria
+ * @package    Auguria_InteractiveImage
+ * @author     Auguria
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License version 3 (GPLv3)
+ */
+
+/* @var $this Auguria_InteractiveImage_Block_Adminhtml_Catalog_Product_Helper_Form_Image_Interactive_Popin */
+?>
+<?php
+    $image = $this->getImage();
+    $params = $this->getParams();
+?>
+<div class="popin interactive-image">
+    <?php echo $this->getMessagesBlock()->setMessages(Mage::getSingleton('adminhtml/session')->getMessages(true))->getGroupedHtml(); ?>
+
+    <div id="interactive-image-canvas" style="width:<?php echo $image['size'][0]?>px;height:<?php echo $image['size'][1]?>px;background-image: url('<?php echo $image['url']?>');" ></div>
+    <div id="interactive-image-panel" style="width:300px;">
+        <form id="interactive-image-form">
+            <?php if(isset($params['areas'])):?>
+                <?php echo $this->getChild('interactive.image.panel.areas')->setAreas($params['areas'])->tohtml()?>
+            <?php endif;?>
+        </form>
+    </div>
+
+    <div class="buttons">
+        <button class="button btn-close" type="button" onclick="interactiveImage.close();">
+    	    <span><span><?php echo $this->__('Close')?></span></span>
+    	</button>
+    	<button class="button btn-save" type="button" onclick="interactiveImage.save();">
+    	    <span><span><?php echo $this->__('Save')?></span></span>
+    	</button>
+    </div>
+</div>

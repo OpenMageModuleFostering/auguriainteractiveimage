@@ -1,0 +1,126 @@
+<?php
+/**
+ * @category   Auguria
+ * @package    Auguria_InteractiveImage
+ * @author     Auguria
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License version 3 (GPLv3)
+ */
+
+/* @var $this Auguria_InteractiveImage_Block_Catalog_Product_Image */
+?>
+<?php
+$imageUrl = $this->getInteractiveImage();
+$useAjax = Mage::helper('auguria_interactiveimage/config')->useAjax();
+?>
+
+<?php if($imageUrl):?>
+
+<?php
+$areas = $this->getAreas();
+$products = $this->getProducts();
+?>
+<div class="box box-collateral">
+	<h2>
+		<?php echo $this->__('Interactive image') ?>
+	</h2>
+	<div class="std">
+		<div class="interactive-container">
+			<img id="interactiveimage" src="<?php echo $imageUrl ?>" alt=""
+				usemap="#interactiveimage" />
+
+			<?php if(count($areas)):?>
+			<map name="interactiveimage" id="map-interactiveimage">
+				<?php foreach($areas as $_area):?>
+				<?php
+				$_coords = $this->getCoords($_area);
+				$_product = $this->getProductBySku($_area['sku']);
+				?>
+
+				<?php if($_product): ?>
+				<area id="area-position-<?php echo $_area['id']?>"
+					shape="<?php echo $_area['type']?>"
+					coords="<?php echo $_coords['area']?>"
+					href="<?php echo $this->getAddToCartUrl($_area['sku'])?>"
+					alt="<?php echo $_area['sku']?>"
+					<?php echo $useAjax ? 'onclick="cartajax.submitInline(this, ' . Mage::helper('auguria_cartajax')->getAjaxParams($_area['sku']) . ');return false;"' : '' ?>
+					data-maphilight='<?php echo isset($_area['hilight_area']) &&  $_area['hilight_area'] ? '{"alwaysOn":true, "neverOn":false}' : '' ?>'>
+
+				<div id="tooltip-area-position-<?php echo $_area['id']?>" class="tooltip" style="display:none;top:<?php echo $_coords['tooltip']['top']?>px;left:<?php echo $_coords['tooltip']['left']?>px;">
+					<div class="sku">
+						<?php echo $_product->getSku()?>
+					</div>
+					<div class="name">
+						<?php echo $_product->getName()?>
+					</div>
+					<div class="price">
+						<?php echo $_product->getFormatedPrice()?>
+					</div>
+				</div>
+				<?php endif; ?>
+				<?php endforeach;?>
+			</map>
+
+			<form action="<?php echo $this->getMassAddToCartUrl() ?>"
+				method="post" id="image_addtocart_form">
+
+				<table id="interactiveimage-product-list"
+					class="interactiveimage-product-list data-table">
+					<caption></caption>
+					<thead>
+						<tr>
+							<th><?php echo $this->__('Position')?></th>
+							<th><?php echo $this->__('Reference')?></th>
+							<th><?php echo $this->__('Designation')?></th>
+							<th><?php echo $this->__('Unit price')?></th>
+							<th><?php echo $this->__('Qty')?></th>
+						</tr>
+					</thead>
+					<tfoot>
+					</tfoot>
+					<tbody id="interactiveimage-product-list-body">
+						<?php foreach($products as $_product):?>
+						<?php /* @var $_product Mage_Catalog_Model_Product */ ?>
+						<tr>
+							<td><?php echo $this->getPositionBySku($_product->getSku())?></td>
+							<td><?php echo $_product->getSku()?></td>
+							<td><?php echo $_product->getName()?></td>
+							<td><?php echo $_product->getFormatedPrice()?></td>
+							<td><input type="hidden"
+								name="products[<?php echo $_product->getId()?>][product]"
+								value="<?php echo $_product->getId()?>" /> <input type="text"
+								name="products[<?php echo $_product->getId()?>][qty]" value="0" />
+							</td>
+						</tr>
+						<?php endforeach;?>
+					</tbody>
+				</table>
+
+				<div class="no-display">
+					<input type="hidden" name="related_product"
+						id="related-products-field" value="" />
+				</div>
+
+				<button class="button btn-cart"
+					title="<?php echo $this->__('Add to Cart')?>" type="submit"
+					<?php echo $useAjax ? 'onclick="productAddToCartForm.submit(this);return false;"' : '' ?>>
+					<span><span><?php echo $this->__('Add to Cart')?> </span> </span>
+				</button>
+
+			</form>
+
+			<script type="text/javascript">
+        jQuery('#interactiveimage').maphilight({neverOn:true,fillColor:'00D2FF',strokeColor:'000000'});
+        jQuery(document).ready(function() {
+            jQuery('area').mouseover(function() {
+            	jQuery('#tooltip-' + this.id).toggle();
+            });
+            jQuery('area').mouseout(function() {
+            	jQuery('#tooltip-' + this.id).toggle();
+            });
+        });
+        </script>
+			<?php endif;?>
+		</div>
+	</div>
+</div>
+<?php endif;?>
