@@ -310,7 +310,7 @@ InteractiveImage.prototype = {
     	});
     },
     
-    focusArea: function(area, box = null){
+    focusArea: function(area, box){
     	// clean active filedsets
     	$$('#' + this.formId + ' fieldset').each(function(elem){
     		elem.removeClassName('active');
@@ -322,7 +322,7 @@ InteractiveImage.prototype = {
     	$('fieldset-' + area.id).addClassName('active');
     },
     
-    dragArea: function(area, box = null){
+    dragArea: function(area, box){
     	if(box){
     		$$('#' + this.formId + ' [name="areas[' + area.id + '][size][x]"]').first().value = parseInt(box.attrs.x);
     		$$('#' + this.formId + ' [name="areas[' + area.id + '][size][y]"]').first().value = parseInt(box.attrs.y);
