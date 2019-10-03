@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/auguriaInteractiveImage",
+    "name": "OpenMageModuleFostering\/auguriaInteractiveImage",
     "type": "magento-module",
     "license": "GNU-General-Public-License",
     "homepage": "",
     "description": "This extension allow you to display an image on a product page. Areas will be defined et linked to another products.",
     "authors": [
-    {
-        "name": "Auguria",
-        "email": "magento@auguria.net"
-    }
-],
+        {
+            "name": "Auguria",
+            "email": "magento@auguria.net"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
