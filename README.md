@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 This extension allow you to display an image on a product page. Areas will be defined et linked to another products.
